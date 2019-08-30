@@ -32,6 +32,7 @@ public:
 	int GPIOSetUp();
 	int SPISetUp();
 	void write(unsigned char addr, unsigned char *buf);
+	unsigned char read(unsigned char addr);
 	void BitModWrite(unsigned char addr, unsigned char *buf); 
 	void LED();
 	void config(int mode,int rate);
