@@ -17,10 +17,11 @@ int MCP2515::GPIOSetUp()
 }
 int MCP2515::SPISetUp()
 {
+	pinMode(MCP2515Param.SSport,OUTPUT);
 	digitalWrite(MCP2515Param.SSport,1);
 	return wiringPiSPISetup(channelSPI,MCP2515Param.Speed);
 }
-void MCP2515::write(int addr,unsigned char *buf)
+void MCP2515::write(unsigned char addr,unsigned char *buf)
 {
 	digitalWrite(MCP2515Param.SSport,0);
 	buff[0] = WRITE;
@@ -29,7 +30,7 @@ void MCP2515::write(int addr,unsigned char *buf)
 	wiringPiSPIDataRW(channelSPI,buff,3);
 	digitalWrite(MCP2515Param.SSport,1);	
 }
-void MCP2515::BitModWrite(int addr,unsigned char *buf)
+void MCP2515::BitModWrite(unsigned char addr,unsigned char *buf)
 {
 	digitalWrite(MCP2515Param.SSport,0);
 	buff[0] = BITMODIFY;

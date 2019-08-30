@@ -9,7 +9,7 @@ int main(void)
 	MCP2515 can;
 	unsigned char MsgBuf[29];
 	if(can.GPIOSetUp()<0){
-		printf("wiringPiGPIOSetup error \n");
+	printf("wiringPiGPIOSetup error \n");
 		return -1;
 	}
 	if(can.SPISetUp()<0){
@@ -55,7 +55,7 @@ int main(void)
 	MsgBuf[28]=0;
 	
 	
-
+	
 	while(1){
 		can.LED();
 	}

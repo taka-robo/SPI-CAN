@@ -31,8 +31,8 @@ public:
 	virtual ~MCP2515();
 	int GPIOSetUp();
 	int SPISetUp();
-	void write(int addr, unsigned char *buf);
-	void BitModWrite(int addr, unsigned char *buf); 
+	void write(unsigned char addr, unsigned char *buf);
+	void BitModWrite(unsigned char addr, unsigned char *buf); 
 	void LED();
 	void config(int mode,int rate);
 	void reset();
